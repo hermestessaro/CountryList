@@ -1,7 +1,8 @@
-package com.example.countrylist
+package com.example.countrylist.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.countrylist.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
