@@ -1,5 +1,12 @@
 package com.example.countrylist.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Country(
-    val countryName: String?
+    @SerializedName("name")
+    val countryName: String?,
+    @SerializedName("capital")
+    val capital: String?,
+    @SerializedName("flagPNG")
+    val flag: String?
 )
