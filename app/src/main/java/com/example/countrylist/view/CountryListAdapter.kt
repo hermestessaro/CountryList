@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.countrylist.R
 import com.example.countrylist.databinding.ItemCountryBinding
 import com.example.countrylist.model.Country
+import com.example.countrylist.util.getProgressDrawable
+import com.example.countrylist.util.loadImage
 
 class CountryListAdapter(
     var countries: ArrayList<Country>
@@ -25,7 +27,10 @@ class CountryListAdapter(
     }
 
     override fun onBindViewHolder(holder: CountryViewHolder, position: Int) {
+        val progressDrawable = getProgressDrawable(holder.view.root.context)
         holder.view.country = countries[position]
+        holder.view.imageView.loadImage(countries[position].flag, progressDrawable)
+
     }
 
     override fun getItemCount() = countries.size
