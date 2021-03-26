@@ -1,6 +1,7 @@
 package com.example.countrylist.di
 
 import com.example.countrylist.model.CountriesApi
+import com.example.countrylist.model.CountriesService
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -20,5 +21,10 @@ class ApiModule {
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) //transforma os dados de tipo Country em um tipo observável
             .build()
             .create(CountriesApi::class.java)
+    }
+
+    @Provides
+    fun provideCountriesService(): CountriesService {
+        return CountriesService()
     }
 }
